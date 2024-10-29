@@ -27,52 +27,34 @@ function SignupForm() {
 
       <div className="form-field">
         <label htmlFor="email" className="form-label">Email</label>
-        <input
-          id="email"
-          {...register('email', { 
-            required: 'Email is required', 
-            pattern: {
-              value: /^\S+@\S+\.\S+$/,
-              message: 'Enter a valid email'
+        <input id="email"{...register('email', { 
+            required: 'Email is required',pattern: {
+            value: /^\S+@\S+\.\S+$/, message: 'Enter a valid email'
             }
           })}
-          placeholder="Enter your email"
-          className="form-input"
-        />
+          placeholder="Enter your email"className="form-input"/>
         {errors.email && <p className="form-error">{errors.email.message}</p>}
       </div>
 
-      {/* Password Field */}
       <div className="form-field">
         <label htmlFor="password" className="form-label">Password</label>
-        <input
-          id="password"
-          type="password"
-          {...register('password', { 
-            required: 'Password is required', 
-            minLength: {
-              value: 6,
-              message: 'Password must be at least 6 characters long'
+        <input id="password"type="password"{...register('password', { 
+            required: 'Password is required',minLength: {
+              value: 6,message: 'Password must be at least 6 characters long'
             }
           })}
-          placeholder="Enter your password"className="form-input"
-        />
+          placeholder="Enter your password"className="form-input"/>
         {errors.password && <p className="form-error">{errors.password.message}</p>}
       </div>
 
       <div className="form-field">
         <label htmlFor="phone" className="form-label">Phone Number</label>
-        <input
-          id="phone"
-          {...register('phone', { 
-            required: 'Phone number is required', 
-            pattern: {
-              value: /^[0-9]{10}$/,
-              message: 'Phone number must be 10 digits'
+        <input id="phone"{...register('phone', { 
+            required: 'Phone number is required',pattern: {
+              value: /^[0-9]{10}$/,message: 'Phone number must be 10 digits'
             }
           })}
-          placeholder="Enter your phone number"
-          className="form-input"
+          placeholder="Enter your phone number"className="form-input"
         />
         {errors.phone && <p className="form-error">{errors.phone.message}</p>}
       </div>
